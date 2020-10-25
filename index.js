@@ -6,7 +6,6 @@ app.use(express.static('board'));
 
 app.use(express.static('slip'));
 
-app.use('/sounds/images', express.static(path.join('uploads', 'images')));
 
 var server=app.listen((process.env.PORT || 5000),()=>{console.log("app started on localhost 5000")});
 var io=socket(server);
