@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Join.css">
+    <script>
+        function newDoc() {
+            var x =  
+                document.getElementById("joinInput").value;
+                x='room='+x;
+          window.location.assign(`http://localhost:5000/board.html?${x}`);
+          
+        }
+        </script>
+</head>
+<body>
+    <div class="joinOuterContainer">
+        <div class="joinInnerContainer">
+            <h1 class="heading">Join</h1>
+           
+            <div><input type="text"placeholder="Room" id="joinInput"  /></div>
+           
+            <button class="button mt-20" type="submit" onclick="newDoc()">Sign in</button>
+            
+        </div>
+    </div> 
+    
+</body>
+</html>
