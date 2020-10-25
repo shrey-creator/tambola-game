@@ -1,3 +1,4 @@
+
 var socket=io.connect('https://myhousie.herokuapp.com/');
 var room=location.search.slice(1).split("=")[1];
 socket.emit('join',room);
@@ -36,12 +37,13 @@ socket.on('number',(data)=>{
   store.push(data.ran)
   var ran=data.ran;
   console.log(ran);
-// var sound="../sounds/"+ran+".wav";
+var sound=ran+".wav";
+console.log(sound);
 $("h1").text(ran);
 $(".no").text(90-store.length);
 $("."+ran).attr('id',"pressed");
-// var audio=new Audio(sound);
-// audio.play();
+var audio=new Audio(sound);
+ audio.play();
 if(store.length>1)
 {
   $(".prev").text(store[store.length-2])
