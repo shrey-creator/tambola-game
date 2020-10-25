@@ -6,6 +6,7 @@ socket.emit('join',room);
   var store=[];
 
 $(".tapper").click(function(){
+  console.log(store);
   randomnumber();
 
 
@@ -17,7 +18,7 @@ function randomnumber()
   {
     if(!(store.includes(ran)))
     {
-      store.push(ran);
+      //store.push(ran);
       break;
     }
     else {
@@ -31,7 +32,8 @@ function randomnumber()
     room:room})
 }
 socket.on('number',(data)=>{
-  console.log('hi');
+  //console.log('hi');
+  store.push(data.ran)
   var ran=data.ran;
   console.log(ran);
 // var sound="../sounds/"+ran+".wav";
