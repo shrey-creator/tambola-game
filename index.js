@@ -2,7 +2,7 @@ const express =require('express');
 const app =express();
 const sitemapRoute= require('./sitemap.xml');
 const socket=require('socket.io');
-app.use('/sitemap.xml',sitemapRoute);
+
 app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
