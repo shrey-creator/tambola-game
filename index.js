@@ -1,15 +1,13 @@
 const express =require('express');
 const app =express();
+const sitemapRoute= require('./sitemap.xml');
 const socket=require('socket.io');
+app.use('/sitemap.xml',sitemapRoute);
 app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
-
 app.use(express.static('slip'));
-app.get('/sitemap.xml', function(req, res) {
-    res.header('Content-Type', 'application/xml');
-    res.render('sitemap');
-    });
+app.use('/sitemap.xml',sitemapRoute);
 
 var passedNumber=[];
 var number=[];
