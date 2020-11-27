@@ -2,10 +2,9 @@
 var socket=io.connect('https://myhousie.herokuapp.com/');
 var room=location.search.slice(1).split("=")[1];
 var store=[];
-
+$(".roomName").text("Room - "+room);
 if(room != null)
 {
-  console.log(room);
   $(".roomName").text("Room - "+room);
   socket.emit('join',room);
   socket.on('join',(data)=>{
