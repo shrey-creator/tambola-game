@@ -3,6 +3,7 @@ body {
   font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
+  background-color: #1a1a1d;
 }
 
 #root {
@@ -70,4 +71,10 @@ h1{
 
 button:focus {
   outline: 0;
+}
+
+.all{
+  color: white;
+  text-align: center;
+  margin: 10px;
 }
