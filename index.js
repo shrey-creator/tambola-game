@@ -6,7 +6,7 @@ app.use(express.static('room'));
 app.use(express.static('board'));
 
 app.use(express.static('slip'));
-router.get('/sitemap.xml', function(req, res) {
+app.get('/sitemap.xml', function(req, res) {
     res.sendFile('./sitemap.xml');
     });
 
