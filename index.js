@@ -7,7 +7,7 @@ app.use(express.static('join'));
 app.use(express.static('room'));
 app.use(express.static('board'));
 app.use(express.static('slip'));
-app.use('/sitemap.xml',sitemapRoute);
+app.use(express.static('sitemap'));
 
 var passedNumber=[];
 var number=[];
