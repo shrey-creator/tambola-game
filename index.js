@@ -1,6 +1,5 @@
 const express =require('express');
 const app =express();
-const sitemapRoute= require('./sitemap.xml');
 const socket=require('socket.io');
 
 app.use(express.static('join'));
