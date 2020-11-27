@@ -5,6 +5,7 @@ var store=[];
 
 if(room != null)
 {
+  $(".roomName").text("Room - "+room);
   socket.emit('join',room);
   socket.on('join',(data)=>{
     for(i=0;i<data.length;i++)
