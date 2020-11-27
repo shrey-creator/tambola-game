@@ -1,52 +1,111 @@
 
 var socket=io.connect('https://myhousie.herokuapp.com/');
 var room=location.search.slice(1).split("=")[1];
-socket.emit('join',room);
+var store=[];
 
-  
-  var store=[];
-
-$(".tapper").click(function(){
-  console.log(store);
-  randomnumber();
-
-
-});
-function randomnumber()
+if(room != null)
 {
-  var ran=Math.floor(Math.random()*90+1);
-  while(true)
-  {
-    if(!(store.includes(ran)))
+  socket.emit('join',room);
+  socket.on('join',(data)=>{
+    for(i=0;i<data.length;i++)
     {
-      //store.push(ran);
-      break;
-    }
-    else {
-      ran=Math.floor(Math.random()*90+1)
+      $("."+data[i]).attr('id',"pressed");
 
     }
-  }
+  });
+  $(".tapper").click(function(){
+    randomnumber();
   
-  socket.emit('number',{
-    ran:ran,
-    room:room})
-}
-socket.on('number',(data)=>{
-  //console.log('hi');
-  store.push(data.ran)
-  var ran=data.ran;
-  console.log(ran);
-var sound=ran+".wav";
-console.log(sound);
-$("h1").text(ran);
-$(".no").text(90-store.length);
-$("."+ran).attr('id',"pressed");
-var audio=new Audio(sound);
- audio.play();
-if(store.length>1)
-{
-  $(".prev").text(store[store.length-2])
-}
-})
+  
+  });
+  function randomnumber()
+  {
+    var ran=Math.floor(Math.random()*90+1);
+    while(true)
+    {
+      if(!(store.includes(ran)))
+      {
+        //store.push(ran);
+        break;
+      }
+      else {
+        ran=Math.floor(Math.random()*90+1)
+  
+      }
+    }
+    
+    socket.emit('number',{
+      ran:ran,
+      room:room})
+  }
+  socket.on('number',(data)=>{
+    for(var i=0;i<store.length;i++)
+    {
+  
+    }
+    //console.log('hi');
+    store.push(data.ran)
+    var ran=data.ran;
+   
+  var sound=ran+".wav";
+  
+  $("h1").text(ran);
+  $(".no").text(90-store.length);
+  $("."+ran).attr('id',"pressed");
+  var audio=new Audio(sound);
+   audio.play();
+  if(store.length>1)
+  {
+    $(".prev").text(store[store.length-2])
+  }
+  })
+  
+}    
+else{
 
+  $(".tapper").click(function(){
+    randomnumber();
+  
+  
+  });
+  function randomnumber()
+  {
+    var ran=Math.floor(Math.random()*90+1);
+    while(true)
+    {
+      if(!(store.includes(ran)))
+      {
+        //store.push(ran);
+        break;
+      }
+      else {
+        ran=Math.floor(Math.random()*90+1)
+  
+      }
+    }
+    playSound(ran);
+    
+  }
+  function playSound(ran)
+  {
+    var sound=ran+".wav";
+  
+  $("h1").text(ran);
+  $(".no").text(90-store.length);
+  $("."+ran).attr('id',"pressed");
+  var audio=new Audio(sound);
+   audio.play();
+  if(store.length>1)
+  {
+    $(".prev").text(store[store.length-2])
+  }
+  }
+
+ 
+   
+  
+  
+}
+
+
+//https://myhousie.herokuapp.com/
