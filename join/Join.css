@@ -3,14 +3,18 @@ body {
   font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #1a1a1d;
+  /* background-color: #1a1a1d; */
+  background-image: url("tr.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #root {
   height: 100vh;
 }
 h1{
-  color: white;
+  color: black;
 }
 
 * {
@@ -23,7 +27,7 @@ h1{
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1a1a1d;
+  /* background-color: #1a1a1d; */
 }
 
 .joinInnerContainer {
@@ -37,7 +41,7 @@ h1{
 }
 
 .heading {
-  color: white;
+  color: black;
   font-size: 2.5em;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
@@ -59,9 +63,14 @@ h1{
   margin-top: 20px;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 740px) {
+  body{
+    background-repeat: no-repeat;
+  background-size: 500px 1000px;
+
+  }
   .joinOuterContainer {
-    height: 100%;
+    
   }
 
   .joinInnerContainer {
@@ -74,7 +83,8 @@ button:focus {
 }
 
 .all{
-  color: white;
+  color: black;
+  font-weight: bolder;
   text-align: center;
   margin: 10px;
 }

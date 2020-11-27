@@ -12,28 +12,10 @@
     <link rel="stylesheet" href="Join.css">
     <script>
         function newDoc() {
-            var x =  
-                document.getElementById("joinInput").value;
-                if(x !="")
-                {
-                    x='room='+x;
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
-                }
-                else{
-                    var element=document.getElementById("joinInput");
-                    element.placeholder="Room name can not be empty";
-                    console.log('hey');
-                    element.classList.add("pressed");
-
-                }
-               
-          
-          
+          window.location.assign(`https://myhousie.herokuapp.com/room.html`);
         }
         function start() {
-        
           window.location.assign(`https://myhousie.herokuapp.com/board.html`);
-          
           
         }
         function slip() {
@@ -47,14 +29,10 @@
 <body>
     <div class="joinOuterContainer">
         <div class="joinInnerContainer">
-            <h1 class="heading">Join</h1>
+            <h1 class="heading">Tambola Game</h1>
            
-            <div><input type="text" placeholder="Share the room with your friends..." id="joinInput"  /></div>
-           
-            <button class="button mt-20" type="submit" onclick="newDoc()">Create / Join room</button>
-            <h1>OR</h1>
+            <button class="button mt-20" type="submit" onclick="newDoc()">Create / Join room</button>  
             <button class="button mt-20" type="submit" onclick="start()">Start Game</button>
-            <h1>OR</h1>
             <button class="button mt-20" type="submit" onclick="slip()">Generate Slip</button>
             
         </div>
