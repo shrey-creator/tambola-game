@@ -7,7 +7,8 @@ app.use(express.static('board'));
 
 app.use(express.static('slip'));
 app.get('/sitemap.xml', function(req, res) {
-    res.sendFile('./sitemap.xml');
+    res.header('Content-Type', 'application/xml');
+    res.render('sitemap');
     });
 
 var passedNumber=[];
