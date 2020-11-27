@@ -61,6 +61,8 @@ if(room != null)
   })
   
 }    
+
+
 else{
 
   $(".tapper").click(function(){
@@ -88,6 +90,7 @@ else{
   }
   function playSound(ran)
   {
+    store.push(ran)
     var sound=ran+".wav";
   
   $("h1").text(ran);

@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "consolidate": "^0.16.0",
     "express": "^4.17.1",
+    "handlebars": "^4.7.6",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {

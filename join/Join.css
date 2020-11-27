@@ -78,3 +78,6 @@ button:focus {
   text-align: center;
   margin: 10px;
 }
+.pressed{
+  border: 2px solid red;
+}

@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
 <head>
     
-    <title>Tambola || Genrerate Slip || Kitty Housie</title>
+    <title>Tambola Game ||  Kitty Housie</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="kitty housie, gererate slip, Create you own room of tambola board and share with your friends,tambola number generator, tambola online">
+    <meta name="image" content="./tr.jpg" alt="">
+    <meta name="description" content="tambola game, kitty housie, gererate slip, Create you own room of tambola board and share with your friends,tambola number generator, tambola online">
     <meta name="keywords" content="tambola,tambola game,tambola tickets, tambola slips, slip generator, tambola number generator, tambola online, tambola board
     tambola board game, housie game, bingo, tambola chits">
     <link rel="stylesheet" href="Join.css">
@@ -13,8 +14,19 @@
         function newDoc() {
             var x =  
                 document.getElementById("joinInput").value;
-                x='room='+x;
-          window.location.assign(`https://myhousie.herokuapp.com/board.html?${x}`);
+                if(x !="")
+                {
+                    x='room='+x;
+          window.location.assign(`https://myhousie.herokuapp.com/?${x}`);
+                }
+                else{
+                    var element=document.getElementById("joinInput");
+                    element.placeholder="Room name can not be empty";
+                    console.log('hey');
+                    element.classList.add("pressed");
+
+                }
+               
           
           
         }
