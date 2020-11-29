@@ -5,11 +5,15 @@ var store=[];
 
 if(room != null)
 {
+  
   $(".roomName").text("Room - "+room);
   socket.emit('join',room);
+  console.log('hey');
   socket.on('join',(data)=>{
     for(i=0;i<data.length;i++)
     {
+      console.log(data);
+
       $("."+data[i]).attr('id',"pressed");
 
     }
